@@ -55,3 +55,5 @@ vim.cmd [[autocmd BufEnter * if (winnr("$") == 1 && &filetype == "CHADTree") | q
 
 -- Remove trailing whitespaces
 vim.cmd [[autocmd BufWritePre * %s/\s\+$//e]]
+
+vim.g.dashboard_default_executive = "fzf"

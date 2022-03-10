@@ -32,7 +32,6 @@ require("packer").startup(
     use "rafi/awesome-vim-colorschemes"
 
     use "SmiteshP/nvim-gps"
-    use "stevearc/aerial.nvim"
     use "stevearc/dressing.nvim"
     use "svermeulen/vim-cutlass"
     use "svermeulen/vim-subversive"
@@ -46,9 +45,7 @@ require("packer").startup(
     use "easymotion/vim-easymotion"
 
 		use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-    use {"akinsho/bufferline.nvim", config = [[require"bufferline".setup{}]]}
 
-    use "kien/ctrlp.vim"
     use "kosayoda/nvim-lightbulb"
     use "kyazdani42/nvim-web-devicons"
     use "weilbith/nvim-code-action-menu"
@@ -78,10 +75,6 @@ require("packer").startup(
 
     use "mhartington/formatter.nvim"
 
-    use "sunjon/shade.nvim"
-
     use "gbprod/substitute.nvim"
-
-		use "Pocco81/AutoSave.nvim"
   end
 )
