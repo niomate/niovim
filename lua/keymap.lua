@@ -62,23 +62,38 @@ map {"n", "<leader>s", "<Plug>(SubversiveSubstituteRange)"}
 map {"x", "<leader>s", "<Plug>(SubversiveSubstituteRange)"}
 map {"n", "<leader>ss", "<Plug>(SubversiveSubstituteWordRange)"}
 
--- Dashboard Nvim use FZF
-vim.g.floaterm_keymap_toggle = "<Leader>tt"
-
 map {"n", "<leader>n", ":CHADopen<cr>", noremap = true, silent = true}
 
 map {"", "<leader>ca", ":CodeActionMenu<cr>", silent = true}
 
+-- File search
 map {"n", "<leader>ff", "<cmd>Telescope find_files<cr>", noremap = true}
 map {"n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", noremap = true}
 map {"n", "<leader>fg", "<cmd>Telescope live_grep<cr>", noremap = true}
 map {"n", "<leader>fb", "<cmd>Telescope buffers<cr>", noremap = true}
+
+-- String search
 map {"n", "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<cr>", noremap = true}
+map {"n", "<leader>fc", "<cmd>Telescope grep_string<cr>", noremap = true}
+
+-- Diagnostics
 map {"n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", noremap = true}
 map {"n", "<leader>fD", "<cmd>Telescope diagnostics bufnr=0<cr>", noremap = true}
+map {"n", "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<cr>"}
+map {"n", "gdp", "<cmd>lua vim.diagnostic.goto_prev()<cr>"}
+map {"n", "gdn", "<cmd>lua vim.diagnostic.goto_next()<cr>"}
+
+-- LSP queries
+map {"n", "<leader>fw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", noremap = true}
 map {"n", "<leader>ft", "<cmd>Telescope treesitter<cr>", noremap = true}
+map {"n", "gdc", "<cmd>Telescope lsp_declarations<cr>"}
+map {"n", "gdf", "<cmd>Telescope lsp_definitions<cr>"}
+map {"n", "gi", "<cmd>Telescope lsp_implementations<cr>"}
+map {"n", "gtd", "<cmd>Telescope lsp_type_definitions<cr>"}
+map {"n", "gr", "<cmd>Telescope lsp_references<cr>"}
+
+-- Generic
 map {"n", "<leader>fq", "<cmd>Telescope quickfix<cr>", noremap = true}
-map {"n", "<leader>fc", "<cmd>Telescope grep_string<cr>", noremap = true}
 map {"n", "<c-p>", "<cmd>Telescope resume<cr>", noremap = true}
 
 map {"n", "<A-j>", "10j", {}}
@@ -86,6 +101,7 @@ map {"n", "<A-k>", "10k", {}}
 
 map {"n", "<space>f", ":Format<cr>", silent = true}
 
+-- Jump to matching pair
 map {"n", "gm", "%"}
 
 -- Clear quickfix list
@@ -102,3 +118,5 @@ map {"t", "<Esc>", "<C-\\><C-n>", noremap = true}
 
 -- Write to read only files
 map {"c", "w!!", "execute 'silent! write !sude tee % >/dev/null' <bar> edit!", noremap = true}
+
+vim.g.floaterm_keymap_toggle = "<leader>tt"
