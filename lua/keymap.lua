@@ -73,11 +73,12 @@ map {"n", "<leader>ff", "<cmd>Telescope find_files<cr>", noremap = true}
 map {"n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", noremap = true}
 map {"n", "<leader>fg", "<cmd>Telescope live_grep<cr>", noremap = true}
 map {"n", "<leader>fb", "<cmd>Telescope buffers<cr>", noremap = true}
---map {"n", "<leader>fh", "<cmd>Telescope help_tags<cr>", noremap = true}
+map {"n", "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<cr>", noremap = true}
 map {"n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", noremap = true}
 map {"n", "<leader>fD", "<cmd>Telescope diagnostics bufnr=0<cr>", noremap = true}
 map {"n", "<leader>ft", "<cmd>Telescope treesitter<cr>", noremap = true}
 map {"n", "<leader>fq", "<cmd>Telescope quickfix<cr>", noremap = true}
+map {"n", "<leader>fc", "<cmd>Telescope grep_string<cr>", noremap = true}
 map {"n", "<c-p>", "<cmd>Telescope resume<cr>", noremap = true}
 
 map {"n", "<A-j>", "10j", {}}
@@ -88,7 +89,7 @@ map {"n", "<space>f", ":Format<cr>", silent = true}
 map {"n", "gm", "%"}
 
 -- Clear quickfix list
-map {"n", "<leader>", ":cclose<cr>", noremap = true}
+map {"n", "<leader>cq", ":cclose<cr>", noremap = true}
 
 -- Split resize
 map {"n", "<leader>-v", "<cmd>vertical resize -10<cr>", noremap = true}
