@@ -1,16 +1,18 @@
-require'plugins'
-require'settings'
-require'lsp'
+require "plugins"
 
-require'setups.bufferline'
-require'setups.completion'
-require'setups.formatter'
-require'setups.kommentary'
-require'setups.statusline'
-require'setups.subversive'
-require'setups.telescope'
-require'setups.texmagic'
-require'setups.treesitter'
-require'setups.vgit'
+require "setups.bufferline"
+require "setups.completion"
+require "setups.formatter"
+require "setups.kommentary"
+require "setups.rust-tools"
+require "setups.statusline"
+require "setups.subversive"
+require "setups.telescope"
+require "setups.texmagic"
+require "setups.treesitter"
+-- require'setups.vgit'
 
-require'keymap'
+require "settings"
+require "lsp"
+
+require "keymap"

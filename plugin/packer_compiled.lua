@@ -25,7 +25,7 @@ local no_errors, error_msg = pcall(function()
   else
     time = function(chunk, start) end
   end
-
+  
 local function save_profiles(threshold)
   local sorted_times = {}
   for chunk_name, time_taken in pairs(profile_info) do
@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/daniel/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/daniel/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/daniel/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/daniel/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/daniel/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
+local package_path_str = "/home/daniel/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/daniel/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/daniel/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/daniel/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/daniel/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -69,16 +69,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["AutoSave.nvim"] = {
-    loaded = true,
-    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/AutoSave.nvim",
-    url = "https://github.com/Pocco81/AutoSave.nvim"
-  },
-  ["aerial.nvim"] = {
-    loaded = true,
-    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/aerial.nvim",
-    url = "https://github.com/stevearc/aerial.nvim"
-  },
   ["auto-pairs"] = {
     loaded = true,
     path = "/home/daniel/.local/share/nvim/site/pack/packer/start/auto-pairs",
@@ -118,11 +108,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/daniel/.local/share/nvim/site/pack/packer/start/coq_nvim",
     url = "https://github.com/ms-jpq/coq_nvim"
-  },
-  ["ctrlp.vim"] = {
-    loaded = true,
-    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/ctrlp.vim",
-    url = "https://github.com/kien/ctrlp.vim"
   },
   ["dressing.nvim"] = {
     loaded = true,
@@ -204,10 +189,10 @@ _G.packer_plugins = {
     path = "/home/daniel/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["shade.nvim"] = {
+  ["rust-tools.nvim"] = {
     loaded = true,
-    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/shade.nvim",
-    url = "https://github.com/sunjon/shade.nvim"
+    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
   },
   ["substitute.nvim"] = {
     loaded = true,
@@ -238,12 +223,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/daniel/.local/share/nvim/site/pack/packer/start/texmagic.nvim",
     url = "https://github.com/jakewvincent/texmagic.nvim"
-  },
-  ["vgit.nvim"] = {
-    config = { 'require("vgit").setup()' },
-    loaded = true,
-    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/vgit.nvim",
-    url = "https://github.com/tanvirtin/vgit.nvim"
   },
   ["vim-cutlass"] = {
     loaded = true,
@@ -303,14 +282,11 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: vgit.nvim
-time([[Config for vgit.nvim]], true)
-require("vgit").setup()
-time([[Config for vgit.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

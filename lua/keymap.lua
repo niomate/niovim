@@ -19,8 +19,8 @@ local map = function(key)
 end
 
 -- Go to first and last characters in line
-map {"", "gl", "$"}
-map {"", "gh", "^"}
+map {"", "<space>l", "$"}
+map {"", "<space>h", "^"}
 
 -- Prevent accidentally going into Ex mode
 -- map Q qq
@@ -67,8 +67,6 @@ map {"n", "<leader>n", ":CHADopen<cr>", noremap = true, silent = true}
 map {"", "<leader>ca", ":CodeActionMenu<cr>", silent = true}
 
 -- File search
-map {"n", "<leader>ff", "<cmd>Telescope find_files<cr>", noremap = true}
-map {"n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", noremap = true}
 map {"n", "<leader>fg", "<cmd>Telescope live_grep<cr>", noremap = true}
 map {"n", "<leader>fb", "<cmd>Telescope buffers<cr>", noremap = true}
 
@@ -90,7 +88,7 @@ map {"n", "gdc", "<cmd>Telescope lsp_declarations<cr>"}
 map {"n", "gdf", "<cmd>Telescope lsp_definitions<cr>"}
 map {"n", "gi", "<cmd>Telescope lsp_implementations<cr>"}
 map {"n", "gtd", "<cmd>Telescope lsp_type_definitions<cr>"}
-map {"n", "gr", "<cmd>Telescope lsp_references<cr>"}
+map {"n", "grr", "<cmd>Telescope lsp_references<cr>"}
 
 -- Generic
 map {"n", "<leader>fq", "<cmd>Telescope quickfix<cr>", noremap = true}
@@ -106,12 +104,18 @@ map {"n", "gm", "%"}
 
 -- Clear quickfix list
 map {"n", "<leader>cq", ":cclose<cr>", noremap = true}
+map {"n", "<leader>cn", ":cnext<cr>", noremap = true}
+map {"n", "<leader>cp", ":cprevious<cr>", noremap = true}
 
 -- Split resize
 map {"n", "<leader>-v", "<cmd>vertical resize -10<cr>", noremap = true}
 map {"n", "<leader>+v", "<cmd>vertical resize +10<cr>", noremap = true}
 map {"n", "<leader>-h", "<cmd>horizontal resize -10<cr>", noremap = true}
 map {"n", "<leader>+h", "<cmd>horizontal resize +10<cr>", noremap = true}
+
+map { "n", "<leader>rh", "<cmd>resize<cr>", noremap = true }
+map { "n", "<leader>rs", "<c-w>=", noremap = true }
+map { "n", "<leader>rv", "<cmd>vertical resize<cr>", noremap = true }
 
 -- Exit from terminal mode
 map {"t", "<Esc>", "<C-\\><C-n>", noremap = true}
