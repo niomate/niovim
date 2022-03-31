@@ -1,6 +1,7 @@
 -- Bootstrap
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap =
     fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
@@ -64,7 +65,7 @@ require("packer").startup(
     use "Matt-A-Bennett/surround-funk.vim"
 
     use "airblade/vim-gitgutter"
-    use "airblade/vim-rooter"
+    -- use "airblade/vim-rooter"
 
     use "voldikss/vim-floaterm"
 
@@ -87,6 +88,8 @@ require("packer").startup(
 
     use "simrat39/rust-tools.nvim"
 
+		-- ROS stuff
+		use "taketwo/vim-ros"
     if packer_bootstrap then
       require("packer").sync()
     end

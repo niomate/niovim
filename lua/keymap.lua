@@ -67,6 +67,7 @@ map {"n", "<leader>n", ":CHADopen<cr>", noremap = true, silent = true}
 map {"", "<leader>ca", ":CodeActionMenu<cr>", silent = true}
 
 -- File search
+map {"n", "<leader>ff", "<cmd>Telescope find_files<cr>", noremap = true}
 map {"n", "<leader>fg", "<cmd>Telescope live_grep<cr>", noremap = true}
 map {"n", "<leader>fb", "<cmd>Telescope buffers<cr>", noremap = true}
 
@@ -122,5 +123,8 @@ map {"t", "<Esc>", "<C-\\><C-n>", noremap = true}
 
 -- Write to read only files
 map {"c", "w!!", "execute 'silent! write !sude tee % >/dev/null' <bar> edit!", noremap = true}
+
+vim.cmd [[autocmd FileType rosmsg,rosaction,rossrv nnoremap gdf :call ros#msg_goto_definition()<cr>]]
+vim.cmd [[autocmd FileType roslaunch.xml nnoremap gdf :call ros#launch_goto_file()<cr>]]
 
 vim.g.floaterm_keymap_toggle = "<leader>tt"
