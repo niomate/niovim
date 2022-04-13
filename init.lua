@@ -15,4 +15,6 @@ require "setups.treesitter"
 require "settings"
 require "lsp"
 
+require "commands"
+
 require "keymap"
