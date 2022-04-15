@@ -10,7 +10,7 @@ require "setups.subversive"
 require "setups.telescope"
 require "setups.texmagic"
 require "setups.treesitter"
--- require'setups.vgit'
+require "setups.clangd_extensions"
 
 require "settings"
 require "lsp"

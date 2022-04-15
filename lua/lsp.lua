@@ -17,7 +17,6 @@ local servers = {
   "rust_analyzer",
   "bashls",
   "vimls",
-  "clangd",
   "texlab",
   "metals",
   "sumneko_lua",

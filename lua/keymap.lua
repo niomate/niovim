@@ -67,6 +67,7 @@ map {"n", "<leader>n", ":CHADopen<cr>", noremap = true, silent = true}
 map {"", "<leader>ca", ":CodeActionMenu<cr>", silent = true}
 
 -- File search
+map {"n", "<leader>ff", "<cmd>Telescope find_files<cr>", noremap = true}
 map {"n", "<leader>fg", "<cmd>Telescope live_grep<cr>", noremap = true}
 map {"n", "<leader>fb", "<cmd>Telescope buffers<cr>", noremap = true}
 

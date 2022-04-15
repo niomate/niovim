@@ -75,8 +75,6 @@ require("packer").startup(
 
     use "jakewvincent/texmagic.nvim"
 
-    -- use {"tanvirtin/vgit.nvim"}
-
     use "famiu/bufdelete.nvim"
 
     use "b3nj5m1n/kommentary"
@@ -86,6 +84,9 @@ require("packer").startup(
     use "gbprod/substitute.nvim"
 
     use "simrat39/rust-tools.nvim"
+    use "p00f/clangd_extensions.nvim"
+
+    use {"edluffy/specs.nvim"}
 
     if packer_bootstrap then
       require("packer").sync()
