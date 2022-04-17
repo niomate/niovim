@@ -1,6 +1,7 @@
 require "plugins"
 
 require "setups.bufferline"
+require "setups.clangd_extensions"
 require "setups.completion"
 require "setups.formatter"
 require "setups.kommentary"
@@ -10,7 +11,6 @@ require "setups.subversive"
 require "setups.telescope"
 require "setups.texmagic"
 require "setups.treesitter"
-require "setups.clangd_extensions"
 
 require "settings"
 require "lsp"

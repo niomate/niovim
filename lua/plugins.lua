@@ -11,82 +11,69 @@ require("packer").startup(
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
-    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-
+    -- Basics
     use "neovim/nvim-lspconfig"
+    use "mhartington/formatter.nvim"
 
-    use {
-      "nvim-lualine/lualine.nvim",
-      requires = {"kyazdani42/nvim-web-devicons", opt = true}
-    }
-
+    -- Telescope stuff
     use "nvim-telescope/telescope.nvim"
-
+    use "nvim-lua/plenary.nvim"
     use {
       "nvim-telescope/telescope-fzf-native.nvim",
       run = "make"
     }
 
-    use "nvim-lua/plenary.nvim"
-
+    -- UI stuff
     use {"ms-jpq/chadtree", branch = "chad", run = ":CHADdeps"}
+    use "rafi/awesome-vim-colorschemes"
+    use "stevearc/dressing.nvim"
+    use {"akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons"}
+    use {
+      "nvim-lualine/lualine.nvim",
+      requires = {"kyazdani42/nvim-web-devicons", opt = true}
+    }
+    use "airblade/vim-gitgutter"
+    use "voldikss/vim-floaterm"
+    use "kosayoda/nvim-lightbulb"
+    use "kyazdani42/nvim-web-devicons"
+    use "weilbith/nvim-code-action-menu"
+    use "famiu/bufdelete.nvim"
+
+    -- Completion
     use {"ms-jpq/coq.artifacts", branch = "artifacts"}
     use {"ms-jpq/coq.thirdparty", branch = "3p"}
     use {"ms-jpq/coq_nvim", branch = "coq", run = ":COQdeps"}
 
+    -- Treesitter
+
+    use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use "romgrk/nvim-treesitter-context"
     use "JoosepAlviste/nvim-ts-context-commentstring"
 
-    use "rafi/awesome-vim-colorschemes"
-
-    use "SmiteshP/nvim-gps"
-    use "stevearc/dressing.nvim"
-    use "svermeulen/vim-cutlass"
-    use "svermeulen/vim-subversive"
-
-    use "michaeljsmith/vim-indent-object"
-
-    use "godlygeek/tabular"
-
-    use "chaoren/vim-wordmotion"
-
-    use "easymotion/vim-easymotion"
-
-    use {"akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons"}
-
-    use "kosayoda/nvim-lightbulb"
-    use "kyazdani42/nvim-web-devicons"
-    use "weilbith/nvim-code-action-menu"
-
+    -- Editing
     use "tpope/vim-markdown"
     use "tpope/vim-repeat"
     use "tpope/vim-surround"
-    use "Matt-A-Bennett/surround-funk.vim"
-
-    use "airblade/vim-gitgutter"
-    use "airblade/vim-rooter"
-
-    use "voldikss/vim-floaterm"
-
+    use "svermeulen/vim-cutlass"
+    use "svermeulen/vim-subversive"
+    use "chaoren/vim-wordmotion"
+    use "easymotion/vim-easymotion"
+    use "gbprod/substitute.nvim"
     use "jiangmiao/auto-pairs"
+    use "michaeljsmith/vim-indent-object"
+    use "godlygeek/tabular"
+    use "b3nj5m1n/kommentary"
+
+    -- Extra LSP tools
+    use "simrat39/rust-tools.nvim"
+    use "p00f/clangd_extensions.nvim"
+
+    use "jakewvincent/texmagic.nvim"
 
     use "junegunn/fzf"
     use "junegunn/fzf.vim"
 
-    use "jakewvincent/texmagic.nvim"
-
-    use "famiu/bufdelete.nvim"
-
-    use "b3nj5m1n/kommentary"
-
-    use "mhartington/formatter.nvim"
-
-    use "gbprod/substitute.nvim"
-
-    use "simrat39/rust-tools.nvim"
-    use "p00f/clangd_extensions.nvim"
-
-    use {"edluffy/specs.nvim"}
+    use "airblade/vim-rooter"
 
     if packer_bootstrap then
       require("packer").sync()
