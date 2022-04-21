@@ -40,12 +40,22 @@ require("packer").startup(
     use "famiu/bufdelete.nvim"
 
     -- Completion
-    use {"ms-jpq/coq.artifacts", branch = "artifacts"}
-    use {"ms-jpq/coq.thirdparty", branch = "3p"}
-    use {"ms-jpq/coq_nvim", branch = "coq", run = ":COQdeps"}
+    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use "hrsh7th/cmp-cmdline"
+    use "kdheepak/cmp-latex-symbols"
+    use "onsails/lspkind-nvim"
+    use "hrsh7th/nvim-cmp"
+
+    -- Snippets
+    -- use "hrsh7th/vim-vsnip"
+    -- use "hrsh7th/vim-vsnip-integ"
+
+		use "L3MON4D3/LuaSnip"
+		use "saadparwaiz1/cmp_luasnip"
 
     -- Treesitter
-
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use "romgrk/nvim-treesitter-context"
     use "JoosepAlviste/nvim-ts-context-commentstring"

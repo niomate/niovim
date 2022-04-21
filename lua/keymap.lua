@@ -114,9 +114,9 @@ map {"n", "<leader>+v", "<cmd>vertical resize +10<cr>", noremap = true}
 map {"n", "<leader>-h", "<cmd>horizontal resize -10<cr>", noremap = true}
 map {"n", "<leader>+h", "<cmd>horizontal resize +10<cr>", noremap = true}
 
-map { "n", "<leader>rh", "<cmd>resize<cr>", noremap = true }
-map { "n", "<leader>rs", "<c-w>=", noremap = true }
-map { "n", "<leader>rv", "<cmd>vertical resize<cr>", noremap = true }
+map {"n", "<leader>rh", "<cmd>resize<cr>", noremap = true}
+map {"n", "<leader>rs", "<c-w>=", noremap = true}
+map {"n", "<leader>rv", "<cmd>vertical resize<cr>", noremap = true}
 
 -- Exit from terminal mode
 map {"t", "<Esc>", "<C-\\><C-n>", noremap = true}
@@ -124,4 +124,6 @@ map {"t", "<Esc>", "<C-\\><C-n>", noremap = true}
 -- Write to read only files
 map {"c", "w!!", "execute 'silent! write !sude tee % >/dev/null' <bar> edit!", noremap = true}
 
+
 vim.g.floaterm_keymap_toggle = "<leader>tt"
+
