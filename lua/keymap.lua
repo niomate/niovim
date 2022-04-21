@@ -114,9 +114,9 @@ map {"n", "<leader>+v", "<cmd>vertical resize +10<cr>", noremap = true}
 map {"n", "<leader>-h", "<cmd>horizontal resize -10<cr>", noremap = true}
 map {"n", "<leader>+h", "<cmd>horizontal resize +10<cr>", noremap = true}
 
-map { "n", "<leader>rh", "<cmd>resize<cr>", noremap = true }
-map { "n", "<leader>rs", "<c-w>=", noremap = true }
-map { "n", "<leader>rv", "<cmd>vertical resize<cr>", noremap = true }
+map {"n", "<leader>rh", "<cmd>resize<cr>", noremap = true}
+map {"n", "<leader>rs", "<c-w>=", noremap = true}
+map {"n", "<leader>rv", "<cmd>vertical resize<cr>", noremap = true}
 
 -- Exit from terminal mode
 map {"t", "<Esc>", "<C-\\><C-n>", noremap = true}
@@ -128,3 +128,4 @@ vim.cmd [[autocmd FileType rosmsg,rosaction,rossrv nnoremap gdf :call ros#msg_go
 vim.cmd [[autocmd FileType roslaunch.xml nnoremap gdf :call ros#launch_goto_file()<cr>]]
 
 vim.g.floaterm_keymap_toggle = "<leader>tt"
+

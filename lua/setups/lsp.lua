@@ -3,7 +3,7 @@ local nvim_lsp = require("lspconfig")
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-	local opts = {noremap = true, silent = true}
+  local opts = {noremap = true, silent = true}
 
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
@@ -17,7 +17,6 @@ local servers = {
   "rust_analyzer",
   "bashls",
   "vimls",
-  "clangd",
   "texlab",
   "metals",
   "sumneko_lua",
