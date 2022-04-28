@@ -49,8 +49,10 @@ require("packer").startup(
     use "onsails/lspkind-nvim"
     use "hrsh7th/nvim-cmp"
 
+		-- Snippets
     use "L3MON4D3/LuaSnip"
     use "saadparwaiz1/cmp_luasnip"
+		use "rafamadriz/friendly-snippets"
 
     -- Treesitter
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
