@@ -27,7 +27,7 @@ require("packer").startup(
     use {"ms-jpq/chadtree", branch = "chad", run = ":CHADdeps"}
     use "rafi/awesome-vim-colorschemes"
     use "stevearc/dressing.nvim"
-    use {"akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons"}
+    use {"akinsho/bufferline.nvim", typ = "v2.*", requires = "kyazdani42/nvim-web-devicons"}
     use {
       "nvim-lualine/lualine.nvim",
       requires = {"kyazdani42/nvim-web-devicons", opt = true}
@@ -52,8 +52,8 @@ require("packer").startup(
     -- use "hrsh7th/vim-vsnip"
     -- use "hrsh7th/vim-vsnip-integ"
 
-		use "L3MON4D3/LuaSnip"
-		use "saadparwaiz1/cmp_luasnip"
+    use "L3MON4D3/LuaSnip"
+    use "saadparwaiz1/cmp_luasnip"
 
     -- Treesitter
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
@@ -84,6 +84,9 @@ require("packer").startup(
     use "junegunn/fzf.vim"
 
     use "airblade/vim-rooter"
+
+    -- Misc
+    use "takac/vim-hardtime"
 
     if packer_bootstrap then
       require("packer").sync()
