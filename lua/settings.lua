@@ -46,6 +46,7 @@ vim.opt.relativenumber = true
 
 vim.opt.termguicolors = true
 vim.opt.scroll = 5
+vim.opt.cursorline = true
 
 --Start completion
 vim.api.nvim_set_var("coq_settings", {auto_start = "shut-up"})
