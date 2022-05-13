@@ -81,6 +81,7 @@ map {"n", "<leader>fD", "<cmd>Telescope diagnostics bufnr=0<cr>", noremap = true
 map {"n", "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<cr>"}
 map {"n", "gdp", "<cmd>lua vim.diagnostic.goto_prev()<cr>"}
 map {"n", "gdn", "<cmd>lua vim.diagnostic.goto_next()<cr>"}
+map {"n", "K", "<cmd> lua vim.lsp.buf.hover()<cr>"}
 
 -- LSP queries
 map {"n", "<leader>fw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", noremap = true}
@@ -128,4 +129,3 @@ vim.cmd [[autocmd FileType rosmsg,rosaction,rossrv nnoremap gdf :call ros#msg_go
 vim.cmd [[autocmd FileType roslaunch.xml nnoremap gdf :call ros#launch_goto_file()<cr>]]
 
 vim.g.floaterm_keymap_toggle = "<leader>tt"
-

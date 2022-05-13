@@ -13,10 +13,7 @@ require "setups.texmagic"
 require "setups.luasnip"
 require "setups.treesitter"
 
-require "setups.lsp"
-
 require "settings"
-
 require "commands"
-
 require "keymap"
+require "lsp"
