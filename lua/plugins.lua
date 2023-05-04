@@ -39,6 +39,7 @@ require("packer").startup(
     use "kyazdani42/nvim-web-devicons"
     use "weilbith/nvim-code-action-menu"
     use "famiu/bufdelete.nvim"
+		use "lukas-reineke/indent-blankline.nvim"
 
     -- Completion
     use "hrsh7th/cmp-nvim-lsp"
@@ -72,12 +73,13 @@ require("packer").startup(
     use "michaeljsmith/vim-indent-object"
     use "godlygeek/tabular"
     use "b3nj5m1n/kommentary"
+		use 'unblevable/quick-scope'
 
     -- Extra LSP tools
     use "simrat39/rust-tools.nvim"
     use "p00f/clangd_extensions.nvim"
 
-    use "jakewvincent/texmagic.nvim"
+		use "lervag/vimtex"
 
     use "junegunn/fzf"
     use "junegunn/fzf.vim"

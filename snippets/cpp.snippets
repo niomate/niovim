@@ -1,0 +1,11 @@
+snippet ldb
+	LLVM_DEBUG(llvm::dbgs() << $1;);
+
+snippet ldbs
+	LLVM_DEBUG(llvm::dbgs() << "$1\n";);
+
+snippet ldbn
+	LLVM_DEBUG(llvm::dbgs() << $1 << "\n";);
+
+snippet ldbsn
+	LLVM_DEBUG(llvm::dbgs() << "$1" << $2 << "\n";);

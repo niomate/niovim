@@ -15,8 +15,7 @@ require("formatter").setup(
         -- Configuration for psf/black
         function()
           return {
-            exe = "black", -- this should be available on your $PATH
-            args = {"-"},
+            exe = "yapf", -- this should be available on your $PATH
             stdin = true
           }
         end
