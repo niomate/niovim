@@ -29,6 +29,7 @@ map {"", "Q", "qq"}
 -- Faster exiting from insert mode
 map {"i", "jj", "<esc>"}
 map {"n", "öö", ":w<cr>"}
+map {"n", "ÖÖ", ":wq<cr>"}
 
 -- Stop highlighting search results
 map {"n", "<A-h>", ":nohlsearch<cr>", silent = true}
