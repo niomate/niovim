@@ -1,13 +1,20 @@
 -- Bootstrap
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
-if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP =
-    fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
+local ensure_packer = function() 
+    local fn = vim.fn
+    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+	fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+	vim.cmd [[packadd packer.nvim]]
+	return true
+    end
+    return false
 end
 
-require("packer").startup(
+local packer_bootstrap = ensure_packer()
+
+
+return require("packer").startup(
   function(use)
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
@@ -39,7 +46,7 @@ require("packer").startup(
     use "kyazdani42/nvim-web-devicons"
     use "weilbith/nvim-code-action-menu"
     use "famiu/bufdelete.nvim"
-		use "lukas-reineke/indent-blankline.nvim"
+    use "lukas-reineke/indent-blankline.nvim"
 
     -- Completion
     use "hrsh7th/cmp-nvim-lsp"
@@ -73,7 +80,7 @@ require("packer").startup(
     use "michaeljsmith/vim-indent-object"
     use "godlygeek/tabular"
     use "b3nj5m1n/kommentary"
-		use 'unblevable/quick-scope'
+    use 'unblevable/quick-scope'
 
     -- Extra LSP tools
     use "simrat39/rust-tools.nvim"
@@ -88,9 +95,5 @@ require("packer").startup(
 
     -- Misc
     use "takac/vim-hardtime"
-
-    if PACKER_BOOTSTRAP then
-      require("packer").sync()
-    end
   end
 )
