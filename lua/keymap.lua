@@ -28,6 +28,7 @@ map {"", "Q", "qq"}
 
 -- Faster exiting from insert mode
 map {"i", "jj", "<esc>"}
+map {"n", "öö", ":w<cr>"}
 
 -- Stop highlighting search results
 map {"n", "<A-h>", ":nohlsearch<cr>", silent = true}
@@ -95,6 +96,7 @@ map {"n", "grr", "<cmd>Telescope lsp_references<cr>"}
 -- Generic
 map {"n", "<leader>fq", "<cmd>Telescope quickfix<cr>", noremap = true}
 map {"n", "<c-p>", "<cmd>Telescope resume<cr>", noremap = true}
+map {"n", "<leader>fls", "<cmd>Telescope luasnip<cr>", noremap = true}
 
 map {"n", "<A-j>", "10j", {}}
 map {"n", "<A-k>", "10k", {}}
