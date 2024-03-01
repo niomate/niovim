@@ -83,6 +83,28 @@ return require("packer").startup(
     use "b3nj5m1n/kommentary"
     use 'unblevable/quick-scope'
 
+		-- Note-taking
+		use {
+				"nvim-neorg/neorg",
+				config = function()
+						require('neorg').setup {
+								load = {
+										["core.defaults"] = {}, -- Loads default behaviour
+										["core.concealer"] = {}, -- Adds pretty icons to your documents
+										["core.dirman"] = { -- Manages Neorg workspaces
+												config = {
+														workspaces = {
+																notes = "~/notes",
+														},
+												},
+										},
+								},
+						}
+				end,
+				run = ":Neorg sync-parsers",
+				requires = "nvim-lua/plenary.nvim",
+		}
+
     -- Extra LSP tools
     use "simrat39/rust-tools.nvim"
     use "p00f/clangd_extensions.nvim"
