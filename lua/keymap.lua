@@ -64,7 +64,7 @@ map {"n", "<leader>s", "<Plug>(SubversiveSubstituteRange)"}
 map {"x", "<leader>s", "<Plug>(SubversiveSubstituteRange)"}
 map {"n", "<leader>ss", "<Plug>(SubversiveSubstituteWordRange)"}
 
-map {"n", "<leader>n", ":CHADopen<cr>", noremap = true, silent = true}
+map {"n", "<leader>ne", ":CHADopen<cr>", noremap = true, silent = true}
 
 map {"", "<leader>ca", ":CodeActionMenu<cr>", silent = true}
 
