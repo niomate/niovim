@@ -5,7 +5,8 @@ require('neorg').setup {
 				config = {
 						workspaces = {
 								work = "~/notes/work",
-						}
+						},
+						default_workspace = "work"
 				}
 		},
 		["core.syntax"] = {},
