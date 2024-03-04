@@ -6,16 +6,7 @@ local map = function(key)
       opts[i] = v
     end
   end
-
-  -- basic support for buffer-scoped keybindings
-  local buffer = opts.buffer
-  opts.buffer = nil
-
-  if buffer then
-    vim.api.nvim_buf_set_keymap(0, key[1], key[2], key[3], opts)
-  else
-    vim.api.nvim_set_keymap(key[1], key[2], key[3], opts)
-  end
+  vim.api.nvim_set_keymap(key[1], key[2], key[3], opts)
 end
 
 -- Go to first and last characters in line
@@ -111,6 +102,49 @@ map {"n", "gm", "%"}
 map {"n", "<leader>cq", ":cclose<cr>", noremap = true}
 map {"n", "<leader>cn", ":cnext<cr>", noremap = true}
 map {"n", "<leader>cp", ":cprevious<cr>", noremap = true}
+
+-- LuaSnip Keymaps
+local ls = require "luasnip"
+
+vim.keymap.set(
+  {"i"},
+  "jk",
+  function()
+    ls.expand()
+  end,
+  {silent = true}
+)
+vim.keymap.set(
+  {"i", "s"},
+  "jk",
+  function()
+    if ls.jumpable(1) then
+      ls.jump(1)
+    end
+  end,
+  {silent = true}
+)
+vim.keymap.set(
+  {"i", "s"},
+  "kj",
+  function()
+    if ls.jumpable(-1) then
+      ls.jump(-1)
+    end
+  end,
+  {silent = true}
+)
+
+vim.keymap.set(
+  {"i", "s"},
+  "<C-E>",
+  function()
+    if ls.choice_active() then
+      ls.change_choice(1)
+    end
+  end,
+  {silent = true}
+)
 
 -- Split resize
 map {"n", "<leader>-v", "<cmd>vertical resize -10<cr>", noremap = true}

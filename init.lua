@@ -1,3 +1,4 @@
+CONFIG_PATH = "$HOME/.config/nvim/"
 require "plugins"
 
 require "setups.bufferline"
