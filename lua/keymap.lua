@@ -6,7 +6,8 @@ local map = function(key)
       opts[i] = v
     end
   end
-  vim.api.nvim_set_keymap(key[1], key[2], key[3], opts)
+  vim.keymap.set(key[1], key[2], key[3], opts)
+  -- vim.api.nvim_set_keymap(key[1], key[2], key[3], opts)
 end
 
 -- Go to first and last characters in line
@@ -15,7 +16,7 @@ map {"", "<space>h", "^"}
 
 -- Prevent accidentally going into Ex mode
 -- map Q qq
-map {"", "Q", "qq"}
+map {"", "Q", "<cr>"}
 
 -- Faster exiting from insert mode
 map {"i", "jj", "<esc>"}
@@ -51,13 +52,12 @@ map {"", "<leader>k", "<Plug>(easymotion-k)"}
 map {"n", "ss", "<Plug>(SubversiveSubstituteLine)"}
 map {"n", "S", "<Plug>(SubversiveSubstituteToEndOfLine)"}
 
-map {"n", "<leader>s", "<Plug>(SubversiveSubstituteRange)"}
-map {"x", "<leader>s", "<Plug>(SubversiveSubstituteRange)"}
+map {{"n", "x"}, "<leader>s", "<Plug>(SubversiveSubstituteRange)"}
 map {"n", "<leader>ss", "<Plug>(SubversiveSubstituteWordRange)"}
 
 map {"n", "<leader>ne", ":CHADopen<cr>", noremap = true, silent = true}
 
-map {"", "<leader>ca", ":CodeActionMenu<cr>", silent = true}
+map {"", "<leader>ca", require("actions-preview").code_actions, silent = true}
 
 -- File search
 map {"n", "<leader>ff", "<cmd>Telescope find_files<cr>", noremap = true}
@@ -106,45 +106,16 @@ map {"n", "<leader>cp", ":cprevious<cr>", noremap = true}
 -- LuaSnip Keymaps
 local ls = require "luasnip"
 
-vim.keymap.set(
-  {"i"},
-  "jk",
-  function()
-    ls.expand()
-  end,
-  {silent = true}
-)
-vim.keymap.set(
+map {
   {"i", "s"},
-  "jk",
-  function()
-    if ls.jumpable(1) then
-      ls.jump(1)
-    end
-  end,
-  {silent = true}
-)
-vim.keymap.set(
-  {"i", "s"},
-  "kj",
-  function()
-    if ls.jumpable(-1) then
-      ls.jump(-1)
-    end
-  end,
-  {silent = true}
-)
-
-vim.keymap.set(
-  {"i", "s"},
-  "<C-E>",
+  "<M-j>",
   function()
     if ls.choice_active() then
       ls.change_choice(1)
     end
   end,
-  {silent = true}
-)
+  silent = true
+}
 
 -- Split resize
 map {"n", "<leader>-v", "<cmd>vertical resize -10<cr>", noremap = true}

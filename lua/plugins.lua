@@ -1,18 +1,17 @@
 -- Bootstrap
 
 local ensure_packer = function()
-    local fn = vim.fn
-    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-    if fn.empty(fn.glob(install_path)) > 0 then
-	fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-	vim.cmd [[packadd packer.nvim]]
-	return true
-    end
-    return false
+  local fn = vim.fn
+  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
 
 local packer_bootstrap = ensure_packer()
-
 
 return require("packer").startup(
   function(use)
@@ -30,7 +29,7 @@ return require("packer").startup(
       "nvim-telescope/telescope-fzf-native.nvim",
       run = "make"
     }
-    use { "benfowler/telescope-luasnip.nvim" }
+    use {"benfowler/telescope-luasnip.nvim"}
 
     -- UI stuff
     use {"ms-jpq/chadtree", branch = "chad", run = ":CHADdeps"}
@@ -45,9 +44,22 @@ return require("packer").startup(
     use "voldikss/vim-floaterm"
     use "kosayoda/nvim-lightbulb"
     use "kyazdani42/nvim-web-devicons"
-    use "weilbith/nvim-code-action-menu"
     use "famiu/bufdelete.nvim"
     use "lukas-reineke/indent-blankline.nvim"
+
+    use {"aznhe21/actions-preview.nvim"}
+    use(
+      {
+        "Pocco81/true-zen.nvim",
+        config = function()
+          require("true-zen").setup {
+            config = {
+              zen_mode = "truezen"
+            }
+          }
+        end
+      }
+    )
 
     -- Completion
     use "hrsh7th/cmp-nvim-lsp"
@@ -82,20 +94,20 @@ return require("packer").startup(
     use "michaeljsmith/vim-indent-object"
     use "godlygeek/tabular"
     use "b3nj5m1n/kommentary"
-    use 'unblevable/quick-scope'
+    use "unblevable/quick-scope"
 
-		-- Note-taking
-		use {
-				"nvim-neorg/neorg",
-				run = ":Neorg sync-parsers",
-				requires = "nvim-lua/plenary.nvim",
-		}
+    -- Note-taking
+    use {
+      "nvim-neorg/neorg",
+      run = ":Neorg sync-parsers",
+      requires = "nvim-lua/plenary.nvim"
+    }
 
     -- Extra LSP tools
     use "simrat39/rust-tools.nvim"
     use "p00f/clangd_extensions.nvim"
 
-		use "lervag/vimtex"
+    use "lervag/vimtex"
 
     use "junegunn/fzf"
     use "junegunn/fzf.vim"
