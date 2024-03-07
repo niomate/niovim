@@ -15,13 +15,12 @@ map {"", "<space>l", "$"}
 map {"", "<space>h", "^"}
 
 -- Prevent accidentally going into Ex mode
--- map Q qq
-map {"", "Q", "<cr>"}
+map {"", "Q", "<esc>"}
 
 -- Faster exiting from insert mode
-map {"i", "jj", "<esc>"}
-map {"n", "öö", ":w<cr>"}
-map {"n", "ÖÖ", ":wq<cr>"}
+map {"i", "jk", "<esc>"}
+map {"n", "gh", ":w<cr>"}
+map {"n", "s", "/"}
 
 -- Stop highlighting search results
 map {"n", "<A-h>", ":nohlsearch<cr>", silent = true}
@@ -133,4 +132,5 @@ map {"t", "<Esc>", "<C-\\><C-n>", noremap = true}
 -- Write to read only files
 map {"c", "w!!", "execute 'silent! write !sude tee % >/dev/null' <bar> edit!", noremap = true}
 
+map {"n", "<space>cc", "<plug>(vimtex-cmd-create)", noremap=true}
 vim.g.floaterm_keymap_toggle = "<leader>tt"

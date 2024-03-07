@@ -15,3 +15,6 @@ vim.api.nvim_create_user_command(
 vim.api.nvim_create_user_command("ReloadConfig", "source $MYVIMRC", {nargs = 0})
 
 vim.api.nvim_create_user_command("LuaSnipEdit", ':lua require("luasnip.loaders").edit_snippet_files()', {nargs = 0})
+
+-- Convert CRLF to Unix line endings
+vim.api.nvim_create_user_command("ConvertCRLF", ":%s/\r//g", {nargs=0})
