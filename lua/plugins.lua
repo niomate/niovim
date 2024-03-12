@@ -48,18 +48,19 @@ return require("packer").startup(
     use "lukas-reineke/indent-blankline.nvim"
 
     use {"aznhe21/actions-preview.nvim"}
-    use(
-      {
-        "Pocco81/true-zen.nvim",
-        config = function()
-          require("true-zen").setup {
-            config = {
-              zen_mode = "truezen"
-            }
+    use {
+      "Pocco81/true-zen.nvim",
+      config = function()
+        require("true-zen").setup {
+          config = {
+            zen_mode = "truezen"
           }
-        end
-      }
-    )
+        }
+      end
+    }
+
+		use { "folke/twilight.nvim" }
+		use { "folke/trouble.nvim" }
 
     -- Completion
     use "hrsh7th/cmp-nvim-lsp"
@@ -113,8 +114,5 @@ return require("packer").startup(
     use "junegunn/fzf.vim"
 
     use "airblade/vim-rooter"
-
-    -- Misc
-    use "takac/vim-hardtime"
   end
 )

@@ -97,11 +97,6 @@ map {"n", "<space>f", ":Format<cr>", silent = true}
 -- Jump to matching pair
 map {"n", "gm", "%"}
 
--- Clear quickfix list
-map {"n", "<leader>cq", ":cclose<cr>", noremap = true}
-map {"n", "<leader>cn", ":cnext<cr>", noremap = true}
-map {"n", "<leader>cp", ":cprevious<cr>", noremap = true}
-
 -- LuaSnip Keymaps
 local ls = require "luasnip"
 
@@ -116,15 +111,64 @@ map {
   silent = true
 }
 
--- Split resize
-map {"n", "<leader>-v", "<cmd>vertical resize -10<cr>", noremap = true}
-map {"n", "<leader>+v", "<cmd>vertical resize +10<cr>", noremap = true}
-map {"n", "<leader>-h", "<cmd>horizontal resize -10<cr>", noremap = true}
-map {"n", "<leader>+h", "<cmd>horizontal resize +10<cr>", noremap = true}
+-- Trouble keymap
+map {
+  "n",
+  "<leader>xx",
+  function()
+    require("trouble").toggle()
+  end
+}
+map {
+  "n",
+  "<leader>xw",
+  function()
+    require("trouble").toggle("workspace_diagnostics")
+  end
+}
+map {
+  "n",
+  "<leader>xd",
+  function()
+    require("trouble").toggle("document_diagnostics")
+  end
+}
+map {
+  "n",
+  "<leader>xq",
+  function()
+    require("trouble").toggle("quickfix")
+  end
+}
+map {
+  "n",
+  "<leader>xl",
+  function()
+    require("trouble").toggle("loclist")
+  end
+}
+map {
+  "n",
+  "gR",
+  function()
+    require("trouble").toggle("lsp_references")
+  end
+}
 
-map {"n", "<leader>rh", "<cmd>resize<cr>", noremap = true}
-map {"n", "<leader>rs", "<c-w>=", noremap = true}
-map {"n", "<leader>rv", "<cmd>vertical resize<cr>", noremap = true}
+map {
+  "n",
+  "<leader>xn",
+  function()
+    require("trouble").next({skip_groups = true, jump = true})
+  end
+}
+map {
+  "n",
+  "<leader>xp",
+  function()
+    require("trouble").previous({skip_groups = true, jump = true})
+  end
+}
 
 -- Exit from terminal mode
 map {"t", "<Esc>", "<C-\\><C-n>", noremap = true}
@@ -132,5 +176,5 @@ map {"t", "<Esc>", "<C-\\><C-n>", noremap = true}
 -- Write to read only files
 map {"c", "w!!", "execute 'silent! write !sude tee % >/dev/null' <bar> edit!", noremap = true}
 
-map {"n", "<space>cc", "<plug>(vimtex-cmd-create)", noremap=true}
+map {"n", "<space>cc", "<plug>(vimtex-cmd-create)", noremap = true}
 vim.g.floaterm_keymap_toggle = "<leader>tt"

@@ -144,5 +144,11 @@ return {
       d(2, rec_ls, {}),
       t({"", "\\end{itemize}"})
     }
-  )
+  ),
+	s(
+	  "cite",
+		{
+			"~\\cite{<>}", i(1)
+		}
+	)
 }
