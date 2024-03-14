@@ -40,6 +40,15 @@ require("formatter").setup(
             cwd = vim.fn.expand("%:p:h") -- Run clang-format in cwd of the file.
           }
         end
+      },
+      json = {
+        function()
+          return {
+            exe = "jq",
+            args = {"'.'"},
+            stdin = true
+          }
+        end
       }
     }
   }

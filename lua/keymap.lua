@@ -22,6 +22,9 @@ map {"i", "jk", "<esc>"}
 map {"n", "gh", ":w<cr>"}
 map {"n", "s", "/"}
 
+map {"n", "<space>n", "o<esc>"}
+map {"n", "<space>o", "cc<esc>"}
+
 -- Stop highlighting search results
 map {"n", "<A-h>", ":nohlsearch<cr>", silent = true}
 
@@ -177,4 +180,5 @@ map {"t", "<Esc>", "<C-\\><C-n>", noremap = true}
 map {"c", "w!!", "execute 'silent! write !sude tee % >/dev/null' <bar> edit!", noremap = true}
 
 map {"n", "<space>cc", "<plug>(vimtex-cmd-create)", noremap = true}
+
 vim.g.floaterm_keymap_toggle = "<leader>tt"
