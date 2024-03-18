@@ -1,5 +1,6 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = {"c", "cpp", "python", "rust", "tex", "vim"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+	auto_install = true,
   highlight = {
     enable = true,              -- false will disable the whole extension
   },

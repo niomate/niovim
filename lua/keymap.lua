@@ -51,8 +51,6 @@ map {"n", "<space>S", "<Plug>(SubversiveSubstituteToEndOfLine)"}
 map {{"n", "x"}, "<leader>s", "<Plug>(SubversiveSubstituteRange)"}
 map {"n", "<leader>ss", "<Plug>(SubversiveSubstituteWordRange)"}
 
-map {"n", "<leader>ne", ":CHADopen<cr>", noremap = true, silent = true}
-
 map {"", "<leader>ca", require("actions-preview").code_actions, silent = true}
 
 -- File search
@@ -64,6 +62,8 @@ map {"n", "<leader>fb", "<cmd>Telescope buffers<cr>", noremap = true}
 map {"n", "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<cr>", noremap = true}
 map {"n", "<leader>fc", "<cmd>Telescope grep_string<cr>", noremap = true}
 
+map {"n", "<leader>ft", "<cmd>Neotree<cr>", noremap = true}
+
 -- Diagnostics
 map {"n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", noremap = true}
 map {"n", "<leader>fD", "<cmd>Telescope diagnostics bufnr=0<cr>", noremap = true}
@@ -74,7 +74,6 @@ map {"n", "K", "<cmd> lua vim.lsp.buf.hover()<cr>"}
 
 -- LSP queries
 map {"n", "<leader>fw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", noremap = true}
-map {"n", "<leader>ft", "<cmd>Telescope treesitter<cr>", noremap = true}
 map {"n", "gdc", "<cmd>Telescope lsp_declarations<cr>"}
 map {"n", "gdf", "<cmd>Telescope lsp_definitions<cr>"}
 map {"n", "gi", "<cmd>Telescope lsp_implementations<cr>"}

@@ -8,11 +8,10 @@ return require("lazy").setup(
     "nvim-lua/plenary.nvim",
     {
       "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make"
+      build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
     },
     "benfowler/telescope-luasnip.nvim",
     -- UI stuff
-    {"ms-jpq/chadtree", branch = "chad", build = ":CHADdeps"},
     "rafi/awesome-vim-colorschemes",
     "stevearc/dressing.nvim",
     {"akinsho/bufferline.nvim", dependencies = "kyazdani42/nvim-web-devicons"},
@@ -37,10 +36,67 @@ return require("lazy").setup(
         }
       end
     },
+    {
+      "nvim-neo-tree/neo-tree.nvim",
+      branch = "v3.x",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons",
+        "MunifTanjim/nui.nvim"
+      }
+    },
     "folke/twilight.nvim",
     "folke/trouble.nvim",
-    "folke/flash.nvim",
     -- Completion
+    {
+      "folke/flash.nvim",
+      event = "VeryLazy",
+      ---@type Flash.Config
+      opts = {},
+      -- stylua: ignore
+      keys = {
+        {
+          "s",
+          mode = {"n", "x", "o"},
+          function()
+            require("flash").jump()
+          end,
+          desc = "Flash"
+        },
+        {
+          "S",
+          mode = {"n", "x", "o"},
+          function()
+            require("flash").treesitter()
+          end,
+          desc = "Flash Treesitter"
+        },
+        {
+          "r",
+          mode = "o",
+          function()
+            require("flash").remote()
+          end,
+          desc = "Remote Flash"
+        },
+        {
+          "R",
+          mode = {"o", "x"},
+          function()
+            require("flash").treesitter_search()
+          end,
+          desc = "Treesitter Search"
+        },
+        {
+          "<c-s>",
+          mode = {"c"},
+          function()
+            require("flash").toggle()
+          end,
+          desc = "Toggle Flash Search"
+        }
+      }
+    },
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
@@ -70,20 +126,23 @@ return require("lazy").setup(
     "b3nj5m1n/kommentary",
     "unblevable/quick-scope",
     "jiangmiao/auto-pairs",
-    -- "ggandor/leap.nvim",
     "easymotion/vim-easymotion",
-    -- Note-taking
-    {
-      "nvim-neorg/neorg",
-      build = ":Neorg sync-parsers",
-      dependencies = "nvim-lua/plenary.nvim"
-    },
     -- Extra LSP tools
     "simrat39/rust-tools.nvim",
     "p00f/clangd_extensions.nvim",
     "lervag/vimtex",
     "junegunn/fzf",
     "junegunn/fzf.vim",
-    "airblade/vim-rooter"
+    "airblade/vim-rooter",
+    {
+      "nvim-neo-tree/neo-tree.nvim",
+      branch = "v3.x",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+        "MunifTanjim/nui.nvim"
+        -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+      }
+    }
   }
 )
