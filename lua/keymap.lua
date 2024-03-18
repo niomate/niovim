@@ -66,13 +66,13 @@ map {"n", "gdp", "<cmd>lua vim.diagnostic.goto_prev()<cr>"}
 map {"n", "gdn", "<cmd>lua vim.diagnostic.goto_next()<cr>"}
 map {"n", "K", "<cmd> lua vim.lsp.buf.hover()<cr>"}
 
-	-- LSP queries
-	map {"n", "<leader>fw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", noremap = true}
-	map {"n", "gdc", "<cmd>Telescope lsp_declarations<cr>"}
-	map {"n", "gdf", "<cmd>Telescope lsp_definitions<cr>"}
-	map {"n", "gi", "<cmd>Telescope lsp_implementations<cr>"}
-	map {"n", "gtd", "<cmd>Telescope lsp_type_definitions<cr>"}
-	map {"n", "grr", "<cmd>Telescope lsp_references<cr>"}
+-- LSP queries
+map {"n", "<leader>fw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", noremap = true}
+map {"n", "gdc", "<cmd>Telescope lsp_declarations<cr>"}
+map {"n", "gdf", "<cmd>Telescope lsp_definitions<cr>"}
+map {"n", "gi", "<cmd>Telescope lsp_implementations<cr>"}
+map {"n", "gtd", "<cmd>Telescope lsp_type_definitions<cr>"}
+map {"n", "grr", "<cmd>Telescope lsp_references<cr>"}
 
 -- Generic
 map {"n", "<leader>fq", "<cmd>Telescope quickfix<cr>", noremap = true}
@@ -168,4 +168,4 @@ map {"c", "w!!", "execute 'silent! write !sude tee % >/dev/null' <bar> edit!", n
 
 map {"n", "<space>cc", "<plug>(vimtex-cmd-create)", noremap = true}
 
-vim.g.floaterm_keymap_toggle = "<leader>tt"
+map {"n", "<leader>tt", "<cmd>ToggleTerm<cr>", noremap=true}
