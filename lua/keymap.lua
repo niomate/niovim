@@ -38,12 +38,6 @@ map {"n", "<leader>bd", ":Bdelete<cr>", noremap = true, silent = true}
 map {"n", "gbp", ":bprevious<cr>", noremap = true, silent = true}
 map {"n", "gbn", ":bnext<cr>", noremap = true, silent = true}
 
--- Easymotion bindings
--- map {"n", "<leader>es", "<Plug>(easymotion-s2)"}
--- map {"n", "<leader>et", "<Plug>(easymotion-t2)"}
--- map {"", "<leader>j", "<Plug>(easymotion-j)"}
--- map {"", "<leader>k", "<Plug>(easymotion-k)"}
-
 -- Vim-subversive bindings
 map {"n", "<space>s", "<Plug>(SubversiveSubstituteLine)"}
 map {"n", "<space>S", "<Plug>(SubversiveSubstituteToEndOfLine)"}
@@ -62,7 +56,7 @@ map {"n", "<leader>fb", "<cmd>Telescope buffers<cr>", noremap = true}
 map {"n", "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<cr>", noremap = true}
 map {"n", "<leader>fc", "<cmd>Telescope grep_string<cr>", noremap = true}
 
-map {"n", "<leader>ft", "<cmd>Neotree<cr>", noremap = true}
+map {"n", "<leader>fe", "<cmd>CHADopen<cr>", noremap = true}
 
 -- Diagnostics
 map {"n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", noremap = true}
@@ -72,13 +66,13 @@ map {"n", "gdp", "<cmd>lua vim.diagnostic.goto_prev()<cr>"}
 map {"n", "gdn", "<cmd>lua vim.diagnostic.goto_next()<cr>"}
 map {"n", "K", "<cmd> lua vim.lsp.buf.hover()<cr>"}
 
--- LSP queries
-map {"n", "<leader>fw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", noremap = true}
-map {"n", "gdc", "<cmd>Telescope lsp_declarations<cr>"}
-map {"n", "gdf", "<cmd>Telescope lsp_definitions<cr>"}
-map {"n", "gi", "<cmd>Telescope lsp_implementations<cr>"}
-map {"n", "gtd", "<cmd>Telescope lsp_type_definitions<cr>"}
-map {"n", "grr", "<cmd>Telescope lsp_references<cr>"}
+	-- LSP queries
+	map {"n", "<leader>fw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", noremap = true}
+	map {"n", "gdc", "<cmd>Telescope lsp_declarations<cr>"}
+	map {"n", "gdf", "<cmd>Telescope lsp_definitions<cr>"}
+	map {"n", "gi", "<cmd>Telescope lsp_implementations<cr>"}
+	map {"n", "gtd", "<cmd>Telescope lsp_type_definitions<cr>"}
+	map {"n", "grr", "<cmd>Telescope lsp_references<cr>"}
 
 -- Generic
 map {"n", "<leader>fq", "<cmd>Telescope quickfix<cr>", noremap = true}

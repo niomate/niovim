@@ -26,25 +26,6 @@ return require("lazy").setup(
     "famiu/bufdelete.nvim",
     "lukas-reineke/indent-blankline.nvim",
     "aznhe21/actions-preview.nvim",
-    {
-      "Pocco81/true-zen.nvim",
-      config = function()
-        require("true-zen").setup {
-          config = {
-            zen_mode = "truezen"
-          }
-        }
-      end
-    },
-    {
-      "nvim-neo-tree/neo-tree.nvim",
-      branch = "v3.x",
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons",
-        "MunifTanjim/nui.nvim"
-      }
-    },
     "folke/twilight.nvim",
     "folke/trouble.nvim",
     -- Completion
@@ -135,14 +116,9 @@ return require("lazy").setup(
     "junegunn/fzf.vim",
     "airblade/vim-rooter",
     {
-      "nvim-neo-tree/neo-tree.nvim",
-      branch = "v3.x",
-      dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-        "MunifTanjim/nui.nvim"
-        -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-      }
+      "ms-jpq/chadtree",
+      branch = "chad",
+      build = "python3 -mchadtree deps"
     }
   }
 )
