@@ -20,15 +20,9 @@ map {"", "Q", "<esc>"}
 -- Faster exiting from insert mode
 map {"i", "jk", "<esc>"}
 map {"n", "gh", ":w<cr>"}
-map {"n", "s", "/"}
-
-map {"n", "<space>n", "o<esc>"}
-map {"n", "<space>o", "cc<esc>"}
 
 -- Stop highlighting search results
 map {"n", "<A-h>", ":nohlsearch<cr>", silent = true}
-
-map {"", "<A-e>", ":w<cr>", silent = true}
 
 -- "in document" (from first line to last; cursor at top--ie, gg)
 map {"x", "id", ":<c-u>normal! G$Vgg0<cr>", noremap = true, silent = true}
@@ -45,14 +39,14 @@ map {"n", "gbp", ":bprevious<cr>", noremap = true, silent = true}
 map {"n", "gbn", ":bnext<cr>", noremap = true, silent = true}
 
 -- Easymotion bindings
-map {"n", "<leader>es", "<Plug>(easymotion-s2)"}
-map {"n", "<leader>et", "<Plug>(easymotion-t2)"}
-map {"", "<leader>j", "<Plug>(easymotion-j)"}
-map {"", "<leader>k", "<Plug>(easymotion-k)"}
+-- map {"n", "<leader>es", "<Plug>(easymotion-s2)"}
+-- map {"n", "<leader>et", "<Plug>(easymotion-t2)"}
+-- map {"", "<leader>j", "<Plug>(easymotion-j)"}
+-- map {"", "<leader>k", "<Plug>(easymotion-k)"}
 
 -- Vim-subversive bindings
-map {"n", "ss", "<Plug>(SubversiveSubstituteLine)"}
-map {"n", "S", "<Plug>(SubversiveSubstituteToEndOfLine)"}
+map {"n", "<space>s", "<Plug>(SubversiveSubstituteLine)"}
+map {"n", "<space>S", "<Plug>(SubversiveSubstituteToEndOfLine)"}
 
 map {{"n", "x"}, "<leader>s", "<Plug>(SubversiveSubstituteRange)"}
 map {"n", "<leader>ss", "<Plug>(SubversiveSubstituteWordRange)"}

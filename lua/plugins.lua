@@ -59,8 +59,8 @@ return require("packer").startup(
       end
     }
 
-		use { "folke/twilight.nvim" }
-		use { "folke/trouble.nvim" }
+    use {"folke/twilight.nvim"}
+    use {"folke/trouble.nvim"}
 
     -- Completion
     use "hrsh7th/cmp-nvim-lsp"
@@ -89,13 +89,15 @@ return require("packer").startup(
     use "svermeulen/vim-cutlass"
     use "svermeulen/vim-subversive"
     use "chaoren/vim-wordmotion"
-    use "easymotion/vim-easymotion"
     use "gbprod/substitute.nvim"
-    use "jiangmiao/auto-pairs"
     use "michaeljsmith/vim-indent-object"
     use "godlygeek/tabular"
     use "b3nj5m1n/kommentary"
     use "unblevable/quick-scope"
+		use "jiangmiao/auto-pairs"
+
+		-- use "ggandor/leap.nvim"
+    use "easymotion/vim-easymotion"
 
     -- Note-taking
     use {

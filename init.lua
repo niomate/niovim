@@ -1,8 +1,10 @@
 CONFIG_PATH = "$HOME/.config/nvim/"
 require "plugins"
 
+
 require "setups.bufferline"
 require "setups.clangd_extensions"
+require "setups.flash"
 require "setups.formatter"
 require "setups.indent_blankline"
 require "setups.kommentary"
