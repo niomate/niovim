@@ -168,4 +168,5 @@ map {"c", "w!!", "execute 'silent! write !sude tee % >/dev/null' <bar> edit!", n
 
 map {"n", "<space>cc", "<plug>(vimtex-cmd-create)", noremap = true}
 
-map {"n", "<leader>tt", "<cmd>ToggleTerm<cr>", noremap=true}
+map {"n", "<leader>ft", "<cmd>ToggleTerm<cr>", noremap = true}
+map {"n", "<leader>cq", "<cmd>call setqflist([])<cr>", noremap = true}
