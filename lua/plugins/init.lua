@@ -42,5 +42,6 @@ return {
   "p00f/clangd_extensions.nvim",
   "junegunn/fzf",
   "junegunn/fzf.vim",
-  "airblade/vim-rooter"
+  "airblade/vim-rooter",
+  "numToStr/Comment.nvim"
 }
