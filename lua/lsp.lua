@@ -19,7 +19,6 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches'cssls'
 local servers = {
-  "ruff_lsp",
   "rust_analyzer",
   "bashls",
   "vimls",
@@ -58,6 +57,24 @@ nvim_lsp.pyright.setup {
       }
     }
   }
+}
+
+nvim_lsp.ruff_lsp.setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150
+    },
+		root_dir = function(fname)
+			local root_files = {
+				"pyproject.toml",
+				"setup.py",
+				"setup.cfg",
+				"requirements.txt",
+				"Pipfile",
+				"pyrightconfig.json"
+			}
+			return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or util.path.dirname(fname)
+		end,
 }
 
 for _, lsp in ipairs(servers) do
