@@ -1,4 +1,5 @@
 local nvim_lsp = require("lspconfig")
+local util = require "lspconfig/util"
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -34,6 +35,17 @@ nvim_lsp.pyright.setup {
   flags = {
     debounce_text_changes = 150
   },
+  root_dir = function(fname)
+    local root_files = {
+      "pyproject.toml",
+      "setup.py",
+      "setup.cfg",
+      "requirements.txt",
+      "Pipfile",
+      "pyrightconfig.json"
+    }
+    return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname) or util.path.dirname(fname)
+  end,
   settings = {
     pyright = {
       -- Using Ruff's import organizer
