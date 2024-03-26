@@ -67,7 +67,7 @@ vim.opt.termguicolors = true
 vim.opt.scroll = 5
 vim.opt.cursorline = true
 
-vim.cmd [[colorscheme gruvbox]]
+vim.cmd [[colorscheme jellybeans]]
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
 -- Autoclose if CHADtree is last window open
 vim.cmd [[autocmd BufEnter * if (winnr("$") == 1 && &filetype == "CHADTree") | q | endif]]
