@@ -18,7 +18,7 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
 -- Load plugins
-require("lazy").setup('plugins')
+require("lazy").setup("plugins")
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -69,8 +69,6 @@ vim.opt.cursorline = true
 
 vim.cmd [[colorscheme gruvbox]]
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
--- Autoclose if CHADtree is last window open
-vim.cmd [[autocmd BufEnter * if (winnr("$") == 1 && &filetype == "CHADTree") | q | endif]]
 
 -- Remove trailing whitespaces
 vim.cmd [[autocmd BufWritePre * %s/\s\+$//e]]
@@ -79,10 +77,18 @@ vim.g.dashboard_default_executive = "fzf"
 
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
-vim.api.nvim_create_user_command("LuaSnipEdit", ':lua require("luasnip.loaders").edit_snippet_files()', {nargs = 0})
-
 -- Convert CRLF to Unix line endings
-vim.api.nvim_create_user_command("ConvertCRLF", ":%s/\r//g", {nargs=0})
+vim.api.nvim_create_user_command("ConvertCRLF", ":%s/\r//g", {nargs = 0})
+
+-- Autoclose if CHADtree is last window open
+-- vim.cmd [[autocmd BufEnter * if (winnr("$") == 1 && &filetype == "CHADTree") | q | endif]]
+vim.api.nvim_create_autocmd(
+  {"BufEnter"},
+  {
+    pattern = "*",
+    command = [[if (winnr("$") == 3 && &filetype == "CHADTree") | q | endif]]
+  }
+)
 
 require "lsp"
 require "keymap"
