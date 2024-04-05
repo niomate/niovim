@@ -18,8 +18,7 @@ return {
             -- Configuration for psf/black
             function()
               return {
-                exe = "yapf", -- this should be available on your $PATH
-                stdin = true
+                exe = "ruff format", -- this should be available on your $PATH
               }
             end
           },

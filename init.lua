@@ -67,7 +67,7 @@ vim.opt.termguicolors = true
 vim.opt.scroll = 5
 vim.opt.cursorline = true
 
-vim.cmd [[colorscheme gruvbox]]
+vim.cmd [[colorscheme jellybeans]]
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
 
 -- Remove trailing whitespaces
