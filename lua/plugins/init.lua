@@ -43,5 +43,7 @@ return {
   "junegunn/fzf",
   "junegunn/fzf.vim",
   "airblade/vim-rooter",
-  "numToStr/Comment.nvim"
+  "numToStr/Comment.nvim",
+  "rasulomaroff/reactive.nvim",
+  "levouh/tint.nvim"
 }
