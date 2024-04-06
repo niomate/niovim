@@ -80,15 +80,5 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 -- Convert CRLF to Unix line endings
 vim.api.nvim_create_user_command("ConvertCRLF", ":%s/\r//g", {nargs = 0})
 
--- Autoclose if CHADtree is last window open
--- vim.cmd [[autocmd BufEnter * if (winnr("$") == 1 && &filetype == "CHADTree") | q | endif]]
-vim.api.nvim_create_autocmd(
-  {"BufEnter"},
-  {
-    pattern = "*",
-    command = [[if (winnr("$") == 3 && &filetype == "CHADTree") | q | endif]]
-  }
-)
-
 require "lsp"
 require "keymap"
