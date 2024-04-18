@@ -51,7 +51,16 @@ return {
                 stdin = true
               }
             end
-          }
+          },
+					html = {
+						function ()
+							return {
+								exe = "prettier",
+								args = {"--write", vim.api.nvim_buf_get_name(0)},
+
+							}
+						end
+					}
         }
       }
     )
